@@ -1,26 +1,36 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "theprimeagen.lazy",
+    spec = "dnetesov.lazy",
     change_detection = { notify = false }
 })
+
+require("ibl").setup()
+
+vim.api.nvim_create_user_command(
+    "RemapsManual",
+    function()
+        vim.cmd("e ~/.config/nvim/lua/dnetesov/docs/remaps_manual.md")
+    end,
+    { nargs = 0 }
+)
 --[[
 require("lazy").setup({
   use("~/personal/harpoon")
 
-  use("theprimeagen/vim-be-good")
-  use("theprimeagen/refactoring.nvim")
+  use("dnetesov/vim-be-good")
+  use("dnetesov/refactoring.nvim")
   --use("nvim-treesitter/nvim-treesitter-context");
 
   use {

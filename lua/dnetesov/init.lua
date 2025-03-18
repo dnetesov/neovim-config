@@ -1,7 +1,7 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
+require("dnetesov.set")
+require("dnetesov.remap")
 
-require("theprimeagen.lazy_init")
+require("dnetesov.lazy_init")
 
 -- DO.not
 -- DO NOT INCLUDE THIS
@@ -41,7 +41,7 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = ThePrimeagenGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
