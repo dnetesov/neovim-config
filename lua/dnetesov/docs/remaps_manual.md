@@ -1,79 +1,115 @@
 # Neovim Custom Keybindings Manual
 
-This document provides a reference for the custom keybindings configured in Neovim.
+This document provides a reference for all custom keybindings configured in Neovim.
+
+---
 
 ## General Settings
 
 ### Leader Key
-- Sets the **leader key** to **space (`<leader>`)**.
-- The leader key is used as a prefix for many shortcuts.
+- **Leader key:** `Space`
+- Used as a prefix for many shortcuts.
 
 ---
 
 ## Navigation and File Explorer
-
-### Open File Explorer (Netrw)
-- **`<leader>pv`** → Opens the built-in file explorer (Netrw).
-
-### Better Scrolling
-- **`Ctrl + d` / `Ctrl + u`** → Scrolls half a page **while centering the cursor**.
-
-### Improved Search Navigation
-- **`n` / `N`** → Jumps to the next/previous search result and centers the screen.
+- **`<leader>pv`** → Open the **file explorer (Netrw)**.
+- **`Ctrl + d / Ctrl + u`** → Scroll half a page **while centering the cursor**.
+- **`n / N`** → Move to the **next/previous** search result and center the screen.
 
 ---
 
 ## Editing Enhancements
-
-### Move Selected Lines in Visual Mode
-- **`J` in Visual Mode** → Moves selected text **down**.
-- **`K` in Visual Mode** → Moves selected text **up**.
-
-### Better Joining of Lines
-- **`J`** → Joins the next line with the current line while preserving the cursor position.
-
-### Improved Paste in Visual Mode
-- **`<leader>p` in Visual Mode** → Pastes without overwriting the unnamed register.
+- **`J` (Visual Mode)** → Move **selected text down**.
+- **`K` (Visual Mode)** → Move **selected text up**.
+- **`J` (Normal Mode)** → Join lines while **preserving cursor position**.
+- **`<leader>p`** (Visual Mode) → Paste without **overwriting the unnamed register**.
 
 ---
 
 ## Clipboard and Deleting
-
-### Copy to System Clipboard
 - **`<leader>y`** → Copy to the **system clipboard**.
-- **`<leader>Y`** → Copy an **entire line** to the system clipboard.
-
-### Delete Without Copying
-- **`<leader>d`** → Deletes to the black hole register (does not copy).
+- **`<leader>Y`** → Copy an **entire line** to the clipboard.
+- **`<leader>d`** → Delete text **without copying** it.
 
 ---
 
 ## LSP & Formatting
-
-### Format Code with LSP
-- **`<leader>f`** → Formats the current file using **LSP formatting**.
-
-### Smart Replace for the Current Word
-- **`<leader>s`** → Starts a **global find & replace** for the **word under the cursor**.
-
----
-
-## Miscellaneous
-
-### Disable `Q` (Legacy Command Mode)
-- **Disables accidental `Q`** (which enters Ex mode).
-
-### Make File Executable
-- **`<leader>x`** → Makes the **current file executable**.
-
-### Quick Open Neovim Config
-- **`<leader>vpp`** → Opens the Neovim plugin configuration file.
-
-### Reload Neovim Config
-- **`<leader><leader>` (Double leader key)** → Reloads the Neovim configuration (`source` config).
+- **`gd`** → Go to **definition**.
+- **`K`** → Show **hover documentation**.
+- **`<leader>vws`** → Search **workspace symbols**.
+- **`<leader>vd`** → Open **diagnostics** in a floating window.
+- **`<leader>vca`** → Perform **code actions**.
+- **`<leader>vrr`** → Find **references**.
+- **`<leader>vrn`** → **Rename** symbol.
+- **`<C-h>`** → Show **signature help**.
+- **`[d / ]d`** → Jump to **previous/next** diagnostic.
+- **`<leader>f`** → Format file using **LSP formatting**.
 
 ---
 
 ## Quickfix & Location List Navigation
-- **`Ctrl + k / Ctrl + j`** → Moves up/down through the **Quickfix list**.
-- **`<leader>k / <leader>j`** → Moves up/down through the **Location List**.
+- **`Ctrl + k / Ctrl + j`** → Move up/down **Quickfix list**.
+- **`<leader>k / <leader>j`** → Move up/down **Location List**.
+
+---
+
+## Find & Replace
+- **`<leader>s`** → Replace **word under cursor** globally.
+
+---
+
+## File & Execution Commands
+- **`<leader>x`** → Make file **executable** (`chmod +x`).
+- **`<leader>vpp`** → Open **Neovim plugin config**.
+- **`<leader><leader>`** → **Reload Neovim config**.
+
+---
+
+## Zen Mode
+- **`<leader>zz`** → Toggle **Zen Mode**.
+- **`<leader>zZ`** → Toggle **Zen Mode (wide screen)**.
+
+---
+
+## Snippets
+- **`Ctrl + s e`** → Expand snippet.
+- **`Ctrl + s ; / Ctrl + s ,`** → Jump forward/backward inside snippet.
+
+---
+
+## Telescope (Fuzzy Finder)
+- **`<leader>pf`** → Find files.
+- **`Ctrl + p`** → Find Git-tracked files.
+- **`<leader>pws`** → Search for **word under cursor** in workspace.
+- **`<leader>pWs`** → Search for word **everywhere**.
+- **`<leader>ps`** → Open **search prompt**.
+- **`<leader>vh`** → Open **help tags**.
+
+---
+
+## Trouble (Diagnostics List)
+- **`<leader>tt`** → Toggle **Trouble**.
+- **`[t / ]t`** → Jump to **previous/next issue**.
+
+---
+
+## Git Commands (Fugitive)
+- **`<leader>gs`** → Open **Git status**.
+- **`<leader>p`** → Git push.
+- **`<leader>P`** → Git pull.
+- **`<leader>t`** → Push to upstream branch.
+- **`gu / gh`** → Select left/right diff during merge conflicts.
+
+---
+
+## Testing (Neotest)
+- **`<leader>tc`** → Run **current test case**.
+- **`<leader>tf`** → Run **test file**.
+
+---
+
+## Undo Tree
+- **`<leader>u`** → Toggle **Undo Tree**.
+
+---
